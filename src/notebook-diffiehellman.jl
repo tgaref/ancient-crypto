@@ -94,13 +94,13 @@ md"""
 p = $(@bind p2 TextField(default="19"))
 """
 
-# ╔═╡ a2daf7ae-7450-496b-be02-74553558e239
+# ╔═╡ 97e10a5f-b5bf-4f02-a974-5a92d2170a46
 begin
 	pp = parse(BigInt, p2)
 	nothing
 end
 
-# ╔═╡ 48920aaf-84ca-4710-b5fd-cbbeb27640bc
+# ╔═╡ 61cab4bd-4d19-4e83-b268-9b74d0192245
 md"""
 g = $(@bind gg NumberField(0:pp-2, default=2))
 """
@@ -257,8 +257,50 @@ md"""
 -----
 """
 
-# ╔═╡ d7742026-ae6d-4293-bc89-ea6f73ce770f
+# ╔═╡ d1c430b4-6e93-41d4-9c05-bb4746ff3333
+md"""
+### Παραβίαση!
+"""
 
+# ╔═╡ d7742026-ae6d-4293-bc89-ea6f73ce770f
+md"""
+p = $(@bind p3 TextField(default="19"))
+"""
+
+# ╔═╡ 67afedc7-b850-424f-bde5-0f8c8dbbfdd8
+begin
+	pp2 = parse(BigInt, p3)
+	nothing
+end
+
+# ╔═╡ fe6c9765-b9d2-4650-b97d-b35977dda163
+md"""
+g = $(@bind gg2 NumberField(0:pp2-2, default=2))
+"""
+
+# ╔═╡ b91bea25-17fb-4e6e-9429-182357be3098
+md"""
+A = $(@bind y2 NumberField(0:pp2-2,default=2))
+"""
+
+# ╔═╡ 5f8b9fb0-868a-47cc-b3a6-ccf0f3467e5c
+md"""
+a = $(@bind x2 NumberField(0:pp2-2,default=2))
+"""
+
+# ╔═╡ 4050a64d-b4b0-4252-9855-f5a765352f4d
+begin
+	r = powermod(gg2, x2, pp2)
+	if r == y2
+		html"""
+		  <p style="font-size: 40px"><span> 😀 </span></p>
+	    """
+	else
+		html"""
+		  <p style="font-size: 40px"><span> 😦 </span></p>
+	    """
+	end
+ end
 
 # ╔═╡ Cell order:
 # ╟─43c349d0-922f-46ea-80d8-abc4c0eb2b54
@@ -274,8 +316,8 @@ md"""
 # ╟─4d96412f-faf0-4795-8dae-f21eea1c4c0e
 # ╟─d845c497-5149-4974-bc46-f8083f0dc6cd
 # ╟─c40815b1-6f0c-4798-9311-14af47a45ef6
-# ╟─a2daf7ae-7450-496b-be02-74553558e239
-# ╟─48920aaf-84ca-4710-b5fd-cbbeb27640bc
+# ╟─97e10a5f-b5bf-4f02-a974-5a92d2170a46
+# ╟─61cab4bd-4d19-4e83-b268-9b74d0192245
 # ╟─01172091-2477-4392-9afe-9121ebf4a010
 # ╟─7db48a02-3970-4f75-818d-7a7088647514
 # ╟─e8fd2a57-da51-4c31-a91c-bdbf7884b8cb
@@ -306,4 +348,10 @@ md"""
 # ╟─46a23493-0797-479a-9f78-575e2388dae2
 # ╟─a3d9570c-f3e9-454c-8785-9f3714197cac
 # ╟─d44f1ae1-e78b-4c14-8e5a-b057029fd118
-# ╠═d7742026-ae6d-4293-bc89-ea6f73ce770f
+# ╟─d1c430b4-6e93-41d4-9c05-bb4746ff3333
+# ╟─d7742026-ae6d-4293-bc89-ea6f73ce770f
+# ╟─67afedc7-b850-424f-bde5-0f8c8dbbfdd8
+# ╟─fe6c9765-b9d2-4650-b97d-b35977dda163
+# ╟─b91bea25-17fb-4e6e-9429-182357be3098
+# ╟─5f8b9fb0-868a-47cc-b3a6-ccf0f3467e5c
+# ╟─4050a64d-b4b0-4252-9855-f5a765352f4d

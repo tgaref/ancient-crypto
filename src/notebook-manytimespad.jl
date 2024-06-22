@@ -54,7 +54,7 @@ end
 begin
 	if isodd(showmessages)
 		for (i,t) in enumerate(plaintexts)
-			println("Μήνυμα $(i-1): $(map(Char, t) |> join)")
+			println("Μήνυμα $(i-1): $(map(Char, t) |> join)\n")
 		end
 	end
 end
@@ -66,9 +66,9 @@ md"""
 
 # ╔═╡ e7843323-75be-41fe-9108-bc78a796fd15
 begin
-	println("Κρυπτογράφημα 0: $cthex");
+	println("Κρυπτογράφημα 0: $cthex\n");
 	for (i,t) in enumerate(ctshex)
-		println("Κρυπτογράφημα $i: $t")
+		println("Κρυπτογράφημα $i: $t\n")
 	end
 end
 
@@ -89,7 +89,7 @@ end
 begin
 	if isodd(decryptbutton)
 		for (i,t) in enumerate(txts)
-			println("Μήνυμα $i: $(map(Char, t) |> join)")
+			println("Μήνυμα $i: $(map(Char, t) |> join)\n")
 		end
 	end
 end
