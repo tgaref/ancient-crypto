@@ -2,3 +2,6 @@
 .dir-locals.el
 Manifest.toml
 html/*
+*.pdf
+*.odt
+*.docx
